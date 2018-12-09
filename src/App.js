@@ -3,6 +3,7 @@ import './App.css';
 import DetailPage from './page/Detail';
 import LoginPage from './page/Login';
 import HomePage from './page/Home';
+import PrivateRoute from './auth/PrivateRoute'
 
 import {
   BrowserRouter,
@@ -16,9 +17,9 @@ class App extends Component {
     return (
       <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <PrivateRoute exact path="/" component={HomePage} />
             <Route exact path="/login" component={LoginPage} />
-            <Route path="/article/:id" component={DetailPage} />
+            <PrivateRoute path="/article/:id" component={DetailPage} />
           </Switch>
       </BrowserRouter>
     );
