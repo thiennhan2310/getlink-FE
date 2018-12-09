@@ -12,7 +12,7 @@ class Home extends React.Component{
       <Container>
         <Logo/>
         <Banner/>
-        <ArticleList list={[1,2,3,4,5,6]}/>
+        <ArticleList />
         <Footer/>
       </Container>
     )
