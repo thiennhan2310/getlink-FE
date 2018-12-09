@@ -4,7 +4,6 @@ import DetailPage from './page/Detail';
 import LoginPage from './page/Login';
 import HomePage from './page/Home';
 import PrivateRoute from './auth/PrivateRoute'
-
 import {
   BrowserRouter,
   Route,

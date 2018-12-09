@@ -2,10 +2,17 @@ import React from 'react';
 import Logo from '../components/Logo'
 import LoginForm  from '../widgets/LoginForm/LoginForm'
 import {Container} from 'react-bootstrap';
-
-
-class Home extends React.Component{
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+class Login extends React.Component{
+ 
   render(){
+    const {  token } = this.props;
+
+    if (token) {
+      return <Redirect to="/" />;
+    }
+
     return (
       <Container>
         <Logo/>
@@ -14,4 +21,8 @@ class Home extends React.Component{
     )
   }
 }
-export default Home;
+const mapStateToProps = (state) => ({
+  token: state.auth.token
+});
+
+export default connect(mapStateToProps)(Login);

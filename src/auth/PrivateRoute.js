@@ -1,11 +1,12 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Route,Redirect} from 'react-router-dom'
-function PrivateRoute({ component: Component, ...rest }) {
+function PrivateRoute({ component: Component, isAuth,...rest }) {
   return (
     <Route
       {...rest}
       render={props =>
-        true ? (
+        isAuth ? (
           <Component {...props} />
         ) : (
           <Redirect
@@ -19,4 +20,10 @@ function PrivateRoute({ component: Component, ...rest }) {
     />
   );
 }
-export default PrivateRoute
+
+function mapStateToProps(state){
+ return {
+  isAuth : !!state.auth.token
+ }
+}
+export default connect(mapStateToProps,null)(PrivateRoute)
