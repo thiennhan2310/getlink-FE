@@ -4,7 +4,7 @@ import { Col,Card,Button } from 'react-bootstrap';
 const ArticleItem = ()=>{
   return (
     <Col md={3}>
-      <Card>
+      <Card style={{marginTop:"20px"}}>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
@@ -14,7 +14,7 @@ const ArticleItem = ()=>{
         </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
-    </Card>;
+    </Card>
     </Col>
   )
 }
