@@ -1,10 +1,17 @@
 import React from 'react';
+import Logo from '../components/Logo'
+import LoginForm  from '../widgets/LoginForm/LoginForm'
+import {Container} from 'react-bootstrap';
 
-class Login extends React.Component{
-render(){
-  return (
-    <div>Login</div>
-  )
+
+class Home extends React.Component{
+  render(){
+    return (
+      <Container>
+        <Logo/>
+        <LoginForm/>
+      </Container>
+    )
+  }
 }
-}
-export default Login;
+export default Home;
