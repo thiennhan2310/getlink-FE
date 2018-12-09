@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row,ControlLabel, Form ,Button,FormGroup,Col,FormControl} from 'react-bootstrap';
+import {Row,Form ,Button,Col} from 'react-bootstrap';
 class LoginForm extends React.Component{
   render(){
     return (
