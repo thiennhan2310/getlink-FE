@@ -11,7 +11,7 @@ class ArticleList extends React.Component {
   render(){
     return (
       <Row style={{marginTop:"35px",marginBottom:"35px"}}>
-        {this.props.articles.map((item,idx)=><ArticleItem key={idx} id={idx} title={item.title} content={item.content} thumbnail={item.thumbnail}/>)}
+        {this.props.articles.map(({_id,title,content,thumbnail})=><ArticleItem key={_id} id={_id} title={title} content={content} thumbnail={thumbnail}/>)}
        </Row>
       )
   }
