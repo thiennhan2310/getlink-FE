@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Detail = ()=>{
+class Detail extends React.Component{
+render(){
   return (
     <div>Detail</div>
   )
+}
 }
 export default Detail;
