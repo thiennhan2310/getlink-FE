@@ -1,23 +1,34 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { Row, Form, Button, Col } from 'react-bootstrap';
-import {login} from '../../actions/auth';
+import { Alert,Row, Form, Button, Col } from 'react-bootstrap';
+import {setToken} from '../../actions/auth';
+import { apiPost} from '../../helpers/api';
+
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {userName:'',password:''};
-    this.inputUserName = this.inputUserName.bind(this);
+    this.state = {email:'',password:'',error:''};
+    this.inputEmail = this.inputEmail.bind(this);
     this.inputPassword = this.inputPassword.bind(this);
     this.submit = this.submit.bind(this);
   }
-  inputUserName(userName){
-    this.setState({userName});
+
+   inputEmail(email){
+    this.setState({email});
   }
   inputPassword(password){
     this.setState({password});
   }
-  submit(){
-    return this.props.login(this.state.userName,this.state.password)
+  async submit(){
+    try{
+      const {data} = await apiPost('/auth/login',{email:this.state.email,password:this.state.password});
+      this.props.setToken(data.token);
+      localStorage.setItem('token', data.token);
+      return;
+    }catch(err){
+     this.setState({error:'Invalid credential'})
+    }
+   
   }
   render() {
     return (
@@ -26,13 +37,16 @@ class LoginForm extends React.Component {
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" onChange={(e)=>this.inputUserName(e.target.value)}/>
+              <Form.Control type="email" placeholder="Enter email" onChange={(e)=>this.inputEmail(e.target.value)}/>
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" onChange={(e)=>this.inputPassword(e.target.value)}/>
             </Form.Group>
+           <Alert variant="danger" hidden={(!this.state.error)}>
+  {this.state.error}
+</Alert>
 
             <Button variant="primary" type="button" onClick={this.submit}>
               Submit
@@ -46,8 +60,8 @@ class LoginForm extends React.Component {
 
 function mapDispatchToProps(dispatch){
   return {
-    login:(userName,password) =>{
-      dispatch(login(userName,password))
+    setToken:(token) =>{
+      dispatch(setToken(token))
     }
   }
 }

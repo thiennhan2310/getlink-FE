@@ -6,8 +6,8 @@ export const setToken = (token)=>({
   token
 })
 
-export const login = (userName,password)=>({
+export const login = (email,password)=>({
   type:LOGIN,
-  userName,
+  email,
   password
 })
