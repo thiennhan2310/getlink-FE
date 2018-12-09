@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../components/Logo'
 import {Image,Container,Col,Row} from 'react-bootstrap';
 import Title from '../components/Title'
+import {apiGet} from '../helpers/api';
 class Detail extends React.Component{
   constructor(props){
     super(props);
@@ -18,11 +19,14 @@ class Detail extends React.Component{
   }
 
   fetchArticleDetail (id){
-    this.setState({
-      title:id,
-      content:"content",
-      thumbnail:"https://phanquanghung.com/wp-content/uploads/2017/11/thumbnail-video-youtube.jpg",
+    apiGet(`/article/${this.state.id}`).then(({data})=>{
+      this.setState({
+        title:data.id,
+        content:data.content,
+        thumbnail:data.thumbnail,
+      })
     })
+    
   }
 render(){
   return (
