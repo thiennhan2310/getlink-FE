@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/gelink-FE/precache-manifest.790be608cae69475fc80e25d7bb68cd6.js"
+  "/getlink-FE/precache-manifest.18784d8fa5fb3b8c0d1011fc58cc6ebb.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/gelink-FE/index.html", {
+workbox.routing.registerNavigationRoute("/getlink-FE/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
