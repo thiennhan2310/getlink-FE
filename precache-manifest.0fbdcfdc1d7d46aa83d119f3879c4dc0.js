@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/getlink-FE/static/css/main.a156bafd.chunk.css"
   },
   {
-    "revision": "445a490490288c03d32d041d5be925f1",
+    "revision": "af8cf7e7cf96c002bb4aaae5e738306d",
     "url": "/getlink-FE/index.html"
   }
 ];
