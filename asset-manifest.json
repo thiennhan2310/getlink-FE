@@ -1,7 +1,7 @@
 {
   "main.css": "/getlink-FE/static/css/main.a156bafd.chunk.css",
-  "main.js": "/getlink-FE/static/js/main.faeb376d.chunk.js",
-  "main.js.map": "/getlink-FE/static/js/main.faeb376d.chunk.js.map",
+  "main.js": "/getlink-FE/static/js/main.fe8f9297.chunk.js",
+  "main.js.map": "/getlink-FE/static/js/main.fe8f9297.chunk.js.map",
   "static/js/1.79ea2e58.chunk.js": "/getlink-FE/static/js/1.79ea2e58.chunk.js",
   "static/js/1.79ea2e58.chunk.js.map": "/getlink-FE/static/js/1.79ea2e58.chunk.js.map",
   "runtime~main.js": "/getlink-FE/static/js/runtime~main.08fb8f51.js",
@@ -9,6 +9,6 @@
   "static/media/logo.svg": "/getlink-FE/static/media/logo.5d5d9eef.svg",
   "static/css/main.a156bafd.chunk.css.map": "/getlink-FE/static/css/main.a156bafd.chunk.css.map",
   "index.html": "/getlink-FE/index.html",
-  "precache-manifest.0fbdcfdc1d7d46aa83d119f3879c4dc0.js": "/getlink-FE/precache-manifest.0fbdcfdc1d7d46aa83d119f3879c4dc0.js",
+  "precache-manifest.d690944703651d0cec40997b5b9e3597.js": "/getlink-FE/precache-manifest.d690944703651d0cec40997b5b9e3597.js",
   "service-worker.js": "/getlink-FE/service-worker.js"
 }
