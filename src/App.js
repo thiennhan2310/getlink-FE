@@ -14,7 +14,7 @@ import {
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Switch>
             <PrivateRoute exact path="/" component={HomePage} />
             <Route exact path="/login" component={LoginPage} />
