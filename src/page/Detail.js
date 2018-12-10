@@ -21,7 +21,7 @@ class Detail extends React.Component{
   fetchArticleDetail (id){
     apiGet(`/article/${this.state.id}`).then(({data})=>{
       this.setState({
-        title:data.id,
+        title:data.title,
         content:data.content,
         thumbnail:data.thumbnail,
       })

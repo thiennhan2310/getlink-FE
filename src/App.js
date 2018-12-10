@@ -13,6 +13,7 @@ import {
 
 class App extends Component {
   render() {
+    console.log(process.env)
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Switch>

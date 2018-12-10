@@ -6,7 +6,7 @@ const ArticleItem = ({id,title,content,thumbnail})=>{
     <Col md={3}>
       <Card style={{marginTop:"20px"}}>
       <Card.Img variant="top" src={thumbnail} />
-      <Card.Body>
+      <Card.Body style={{maxHeight: "130px",overflow: "hidden"}}>
         <Card.Title>
            <Link  to={`/article/${id}`}>{title}</Link>
            </Card.Title>
